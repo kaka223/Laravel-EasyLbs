@@ -22,26 +22,26 @@ class ServiceProvider extends LaravelServiceProvider
     }
     public function register()
     {
-//        $this->app->singleton(['HivenKay\\LaravelLbs\\EasyLbs'=>'EasyLbs'],function(){
+//        $this->app->singleton('HivenKay\\LaravelLbs\\EasyLbs',function(){
 //            return new GeoTable(config('easy_lbs.server_ak'),config('easy_lbs.server_sk'));
 //        });
-        $this->app->singleton(['EasyLbs\\GeoCloud\\GeoTable'=>'GeoTable'],function(){
+        $this->app->singleton(GeoTable::class,function(){
             $app = new GeoTable(config('easy_lbs.server_ak'),config('easy_lbs.server_sk'));
             return $app;
         });
-        $this->app->singleton(['EasyLbs\\GeoCloud\\GeoColumn'=>'GeoColumn'],function(){
+        $this->app->singleton(GeoColumn::class,function(){
             $app = new GeoColumn(config('easy_lbs.server_ak'),config('easy_lbs.server_sk'));
             return $app;
         });
-        $this->app->singleton(['EasyLbs\\GeoCloud\\GeoPoi'=>'GeoPoi'],function(){
+        $this->app->singleton(GeoPoi::class,function(){
             $app = new GeoPoi(config('easy_lbs.server_ak'),config('easy_lbs.server_sk'));
             return $app;
         });
-        $this->app->singleton('GeoSearch',function(){
+        $this->app->singleton(GeoSearch::class,function(){
             $app = new GeoSearch(config('easy_lbs.server_ak'),config('easy_lbs.server_sk'));
             return $app;
         });
-        $this->app->singleton(['HivenKay\\LaravelLbs\\EasyLbs'=>'EasyLbs']);
+        $this->app->singleton('HivenKay\\LaravelLbs\\EasyLbs');
 
     }
     public function provides()
