@@ -10,15 +10,15 @@ namespace HivenKay\LaravelLbs;
 class EasyLbs
 {
     public function GeoTable() {
-        return app('GeoTable');
+        return app(GeoTable::class);
     }
     public function GeoColumn() {
-        return app('GeoColumn');
+        return app(GeoColumn::class);
     }
     public function GeoPoi() {
-        return app('GeoPoi');
+        return app(GeoPoi::class);
     }
     public function GeoSearch() {
-        return app('GeoSearch');
+        return app(GeoSearch::class);
     }
 }
