@@ -46,6 +46,6 @@ class ServiceProvider extends LaravelServiceProvider
     }
     public function provides()
     {
-        return ['GeoTable','GeoColumn','GeoPoi','GeoSearch','EasyLbs'];
+        return [GeoTable::class,GeoColumn::class,GeoPoi::class,GeoSearch::class,'EasyLbs'];
     }
 }
